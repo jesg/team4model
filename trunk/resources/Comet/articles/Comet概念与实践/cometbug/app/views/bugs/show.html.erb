@@ -1,0 +1,6 @@
+<tr id="bug_<%= @bug.id %>">
+  <td><%= @bug.id %></td>
+  <td><%=h @bug.description %></td>
+  <td><%= @bug.status %></td>
+  <td><%= link_to 'Edit', edit_bug_path(@bug) %></td>
+</tr>

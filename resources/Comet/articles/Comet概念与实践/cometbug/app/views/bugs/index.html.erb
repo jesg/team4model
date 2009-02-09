@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    dojo.addOnLoad(function(){
+	BugTopicManager.init(true);
+    });	
+</script>
+<h1>Listing bugs</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
+
+<% for bug in @bugs %>
+  <tr id="bug_<%= bug.id %>">
+    <td><%= bug.id %></td>
+    <td><%=h bug.description %></td>
+    <td><%= bug.status %></td>
+    <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New bug', new_bug_path %>
